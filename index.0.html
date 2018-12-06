@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buy Wholesale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+        </style>
+    </head>
+    <body>
+    
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+          <ul class="w3-navbar w3-orange w3-wide w3-padding-8 w3-card-2">
+            <li class="w3-left w3-hide-small">
+              <a href="#home" class="w3-left">Rebate Center</a>
+              <a href="#home" class="w3-left">Order Tracker</a>
+              <a href="#home" class="w3-left"><i class="fa fa-newspaper-o"></i>Weekly Ad</a>
+            </li>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <li class="w3-right w3-hide-small">
+              <a href="#about" class="w3-left"><i class="fa fa-gift"></i>Gift Registry</a> 
+            </li>
+            <li class="w3-dropdown-hover w3-right w3-hide-small">
+          		<a href="#menu" class="w3-left"><i class="fa fa-gear"></i>Welcome, Sign In <i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-white w3-card-4">
+                  <a href="#">My Account</a>
+                  <a href="#">View Orders</a>
+                  <a href="#">Lookup Receipts</a>
+                  <a href="#">My Profile</a>
+                  <button>Sign In</button>
+        		</div>
+            </li>     
+          </ul>
+        </div>
+    
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+          
+        </header>
+
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px">
+            <br/><br/>
+        
+            <div class="w3-panel">
+                <div class="w3-layout-container">
+                    <div class="w3-layout-cell">
+                        <img class="w3-image" src="images/buywholesalelogo.png" width="100" alt="Buy Wholesale">  
+                    </div>
+                    <div class="w3-layout-cell">
+                      <ul class="w3-navbar w3-wide w3-padding-8">
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Help Center <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Contact Us</a>
+                              <a href="#">BuyWholesale.com</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Services <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Blueprint Upload</a>
+                              <a href="#">Buy and Pick Up At Store</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>    
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <style>
+                li.department:hover{background-color : grey;}
+                li a:hover{background-color : grey;}
+                .sub_menu {
+                position : absolute;
+                top: 27px;
+                left: 258px;
+                display : none;
+                }
+                .menu_frame {        
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                height: 600px;
+                width: 100%;
+                }
+                .sub_menu nav {
+                padding: 10px; width:500px; position:relative !important;
+                }
+                nav {max-height:100%; width: 800px}
+            </style>
+            <script>
+                $(document).ready(function(){
+                  $(".department").mouseout(function(){$(this).find(".sub_menu").hide()});
+                  $(".department").mouseover(function(){$(this).find(".sub_menu").show()});
+                  $("#sub_menu").mouseover(function(){$(this).show()})
+                  $("#sub_menu").mouseout(function(){$(this).hide()});
+                });
+            </script>
+            <div class="w3-row" >
+            <div class="w3-col m2 l3" style="position: relative">
+                <div class="w3-grey w3-large w3-text-white" style="text-align: center;">
+                    Shop Departments
+                </div>
+                <div class="w3-card-2">
+                    <ul class="w3-ul" >
+                        <li class="department"><span class="name">Appliances</span> 
+                            <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Appliance Suites</a> 
+                                   <a href="#">Cooktops</a> 
+                                   <a href="#">Dishwashers</a> 
+                                   <a href="#">Freezers & Ice Makers</a> 
+                                   <a href="#">Kitchen Appliance Accessories</a> 
+                                   <a href="#">Microwaves</a> 
+                                   <a href="#">Ranges</a> 
+                                   <a href="#">Range Hoods</a> 
+                                   <a href="#">Refrigerators</a> 
+                                   <a href="#">Small Appliances</a> 
+                                   <a href="#">Vacuum Cleaners & Floor Care</a> 
+                                   <a href="#">Wall Ovens</a> 
+                                   <a href="#">Washers & Dryers</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Bath</span> 
+                            <div class="sub_menu w3-grey" style="display: none;"> 
+                                <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Bathroom Fan Accessories</a> 
+                                   <a href="#">Bathroom Fans & Ventilators</a> 
+                                   <a href="#">Bathroom Faucets</a> 
+                                   <a href="#">Bathroom Hardware & Coordinates</a> 
+                                   <a href="#">Bathroom Safety</a> 
+                                   <a href="#">Bathroom Sinks</a> 
+                                   <a href="#">Bathroom Storage & Organization</a> 
+                                   <a href="#">Bathroom Vanities, Cabinets & Mirrors</a> 
+                                   <a href="#">Bathtubs & Showers</a> 
+                                   <a href="#">Drain Cleaning Equipment & Supplies</a> 
+                                   <a href="#">Medicine Cabinets & Mirrors</a> 
+                                   <a href="#">Toilets</a> 
+                                   <a href="#">Towel Warmers</a> 
+                                   <a href="#">Vanity Tops & Accessories</a> 
+                                   <a href="#">Shower Doors</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Building Materials </span>
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Acrylic & Glass Sheeting</a> 
+                                   <a href="#">Block</a> 
+                                   <a href="#">Books & Building Plans</a> 
+                                   <a href="#">Carports & Shelters</a> 
+                                   <a href="#">Concrete, Cement & Masonry</a> 
+                                   <a href="#">Decking & Deck Products</a> 
+                                   <a href="#">Drywall</a> 
+                                   <a href="#">Fencing</a> 
+                                   <a href="#">Glass Blocks & Glass Block Panels</a> 
+                                   <a href="#">Insulation</a> 
+                                   <a href="#">Interior Post Covers & Bar Rails</a> 
+                                   <a href="#">Landscaping Materials</a> 
+                                   <a href="#">Lumber & Boards</a> 
+                                   <a href="#">Metal Framing</a> 
+                                   <a href="#">Panel Products</a> 
+                                   <a href="#">Pole Barn/Post Frame Materials</a> 
+                                   <a href="#">Posts & Columns</a> 
+                                   <a href="#">Ramps</a> 
+                                   <a href="#">Roofing, Soffits & Gutters</a> 
+                                   <a href="#">Shelves & Shelving Units</a> 
+                                   <a href="#">Siding</a> 
+                                   <a href="#">Staircase Systems & Parts</a> 
+                                   <a href="#">Trusses, I-Joists & Engineered Lumber</a> 
+                                   <a href="#">Yard Buildings, Outdoor Storage & Accessories</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Doors, Windows & Millwork</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Acrylic & Glass Sheeting</a> 
+                                   <a href="#">Air Curtains, Impact Doors & Vinyl Strip Doors</a> 
+                                   <a href="#">Door, Window & Cabinet Hardware</a> 
+                                   <a href="#">Draft Stoppers</a> 
+                                   <a href="#">Exterior Doors</a> 
+                                   <a href="#">Folding Doors</a> 
+                                   <a href="#">Garage Doors & Garage Door Openers</a> 
+                                   <a href="#">Interior Closet Doors</a> 
+                                   <a href="#">Interior Doors</a> 
+                                   <a href="#">Interior Post Covers & Bar Rails</a> 
+                                   <a href="#">Mobile & Manufactured Home Parts</a> 
+                                   <a href="#">Moulding</a> 
+                                   <a href="#">Rain & Sun Protection</a> 
+                                   <a href="#">Special Buy Doors</a> 
+                                   <a href="#">Staircase Systems & Parts</a> 
+                                   <a href="#">Tub-Shower & Shower Doors</a> 
+                                   <a href="#">Weather Stripping</a> 
+                                   <a href="#">Window & Door Screening Supplies</a> 
+                                   <a href="#">Windows</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Electrical</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Conduit, Conduit Fittings & Raceways</a> 
+                                   <a href="#">Doorbells, Alarms & Security Systems</a> 
+                                   <a href="#">Electrical Cords & Cord Management</a> 
+                                   <a href="#">Electrical Tape</a> 
+                                   <a href="#">Electrical Tools</a> 
+                                   <a href="#">Electrical Wire & Cable</a> 
+                                   <a href="#">Electronics</a> 
+                                   <a href="#">Fire Safety</a> 
+                                   <a href="#">Generators & Alternative Power Generation</a> 
+                                   <a href="#">Home Automation</a> 
+                                   <a href="#">Light Switches, Dimmers & Outlets</a> 
+                                   <a href="#">Lighting & Ceiling Fans</a> 
+                                   <a href="#">Wall Plates</a> 
+                                   <a href="#">Light Bulbs</a> 
+                                   <a href="#">Batteries & Battery Chargers</a> 
+                                   <a href="#">Circuit Protection & Distribution</a> 
+                                   <a href="#">Wiring Accessories</a> 
+                                   <a href="#">Strut Support Systems</a> 
+                                   <a href="#">Electrical Boxes & Covers</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Flooring & Rugs</span>
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Area Rugs, Mats & Runners</a> 
+                                   <a href="#">Carpet & Carpet Tiles</a> 
+                                   <a href="#">Cork Flooring</a> 
+                                   <a href="#">Fan Shop</a> 
+                                   <a href="#">Flooring Tools</a> 
+                                   <a href="#">Flooring Trims & Edgings</a> 
+                                   <a href="#">Hardwood Flooring</a> 
+                                   <a href="#">Laminate Flooring</a> 
+                                   <a href="#">Tile & Stone</a> 
+                                   <a href="#">Utility Flooring</a> 
+                                   <a href="#">Vacuum Cleaners & Floor Care</a> 
+                                   <a href="#">Vinyl Flooring</a> 
+                                   <a href="#">Wall Base</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Grocery, Housewares & Pet</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Cookies & Crackers</a> 
+                                   <a href="#">Frozen Foods</a> 
+                                   <a href="#">Canned & Packaged Food</a> 
+                                   <a href="#">Concession Equipment</a> 
+                                   <a href="#">Emergency Food</a> 
+                                   <a href="#">Baking</a> 
+                                   <a href="#">Condiments</a> 
+                                   <a href="#">Beverages</a> 
+                                   <a href="#">Bread</a> 
+                                   <a href="#">Breakfast Food</a> 
+                                   <a href="#">Snack Food</a> 
+                                   <a href="#">Housewares</a> 
+                                   <a href="#">Cleaning Supplies</a> 
+                                   <a href="#">Cooking & Food Preparation</a> 
+                                   <a href="#">Laundry Supplies</a> 
+                                   <a href="#">Plastic & Paper Products</a> 
+                                   <a href="#">Pet & Wildlife</a> 
+                                   <a href="#">Bird & Wildlife Food & Accessories</a> 
+                                   <a href="#">Cat Supplies</a> 
+                                   <a href="#">Dog Supplies</a> 
+                                   <a href="#">Domestic Bird & Fish</a> 
+                                   <a href="#">Pet Bowls & Storage</a> 
+                                   <a href="#">Pet Doors & Gates</a> 
+                                   <a href="#">Rabbit & Guinea Pig Supplies</a> 
+                                   <a href="#">Small Animal Containment</a> 
+                                   <a href="#">Stock Tank Deicers</a> 
+                                   <a href="#">Health & Beauty</a> 
+                                   <a href="#">Body Wash, Facial Cleansers & Soap</a> 
+                                   <a href="#">Deodorant</a> 
+                                   <a href="#">Eye Care</a> 
+                                   <a href="#">Hair Care & Accessories</a> 
+                                   <a href="#">Lotions & Sunscreen</a> 
+                                   <a href="#">Oral Care</a> 
+                                   <a href="#">Pain Relief & First Aid</a> 
+                                   <a href="#">Personal Care</a> 
+                                   <a href="#">Respiratory & Digestive Care</a> 
+                                   <a href="#">Shaving & Grooming</a> 
+                                   <a href="#">Canning Supplies</a> 
+                                   <a href="#">Grocery_Dairy</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Heating & Cooling</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Air Conditioners & Dehumidifiers</a> 
+                                   <a href="#">Air Filters</a> 
+                                   <a href="#">Air Purifiers & Accessories</a> 
+                                   <a href="#">Baseboard Heaters</a> 
+                                   <a href="#">Bathroom Fans & Ventilators</a> 
+                                   <a href="#">Chimney Caps</a> 
+                                   <a href="#">Ductwork</a> 
+                                   <a href="#">Electric Heat</a> 
+                                   <a href="#">Fans</a> 
+                                   <a href="#">Fire Pits & Outdoor Heating</a> 
+                                   <a href="#">Fireplaces & Stoves</a> 
+                                   <a href="#">Firewood, Fire Starters & Lighters</a> 
+                                   <a href="#">Firewood Racks & Covers</a> 
+                                   <a href="#">Gas & Kerosene Heaters</a> 
+                                   <a href="#">Humidifiers &  Accessories</a> 
+                                   <a href="#">HVAC Cleaners & Chemicals</a> 
+                                   <a href="#">Hydronic Radiant Heat</a> 
+                                   <a href="#">Indoor Air Quality</a> 
+                                   <a href="#">Propane Tanks</a> 
+                                   <a href="#">Venting</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Home & Decor</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Apparel</a> 
+                                   <a href="#">Area Rugs, Mats & Runners</a> 
+                                   <a href="#">Books</a> 
+                                   <a href="#">Ceilings</a> 
+                                   <a href="#">Craft Supplies</a> 
+                                   <a href="#">Decorative Accents</a> 
+                                   <a href="#">Decorative Pillows & Throws</a> 
+                                   <a href="#">Fan Shop</a> 
+                                   <a href="#">Furniture</a> 
+                                   <a href="#">Gift Center</a> 
+                                   <a href="#">Health & Wellness</a> 
+                                   <a href="#">Home Accessibility</a> 
+                                   <a href="#">Jewelry</a> 
+                                   <a href="#">Luggage & Travel Gear</a> 
+                                   <a href="#">Medicine Cabinets & Mirrors</a> 
+                                   <a href="#">Menards Collectibles</a> 
+                                   <a href="#">Office Supplies</a> 
+                                   <a href="#">Patio Furniture</a> 
+                                   <a href="#">Toddler & Baby Essentials</a> 
+                                   <a href="#">Wallpaper & Appliques</a> 
+                                   <a href="#">Window Treatments</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Kitchen</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Backsplashes & Wall Tiles</a> 
+                                   <a href="#">Bar Equipment & Cocktail Stations</a> 
+                                   <a href="#">Bar Stools</a> 
+                                   <a href="#">Cabinet Hardware & Accessories</a> 
+                                   <a href="#">Cooking & Food Preparation</a> 
+                                   <a href="#">Countertops & Laminate</a> 
+                                   <a href="#">Disposals</a> 
+                                   <a href="#">Hot Water Dispensers</a> 
+                                   <a href="#">Kitchen Accessories</a> 
+                                   <a href="#">Kitchen Appliance Accessories</a> 
+                                   <a href="#">Kitchen Appliances</a> 
+                                   <a href="#">Kitchen Cabinets</a> 
+                                   <a href="#">Kitchen Cabinets, Organizers & Food Storage</a> 
+                                   <a href="#">Kitchen Faucets</a> 
+                                   <a href="#">Kitchen Furniture</a> 
+                                   <a href="#">Kitchen Parts</a> 
+                                   <a href="#">Kitchen Sinks</a> 
+                                   <a href="#">Table Tops</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Lighting & Ceiling Fans</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Ceiling Fans</a> 
+                                   <a href="#">Flashlights, Work Lights & Portable Lighting</a> 
+                                   <a href="#">Generators & Alternative Power Generation</a> 
+                                   <a href="#">Indoor Lighting</a> 
+                                   <a href="#">Light Bulbs</a> 
+                                   <a href="#">Lighting Hardware & Accessories</a> 
+                                   <a href="#">Outdoor Lighting</a> 
+                                   <a href="#">Replacement Glass & Shades</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Maintenance, Repair & Operations</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Apartment & Community Living</a> 
+                                   <a href="#">Commercial Appliances</a> 
+                                   <a href="#">Commercial-Use Supplies</a> 
+                                   <a href="#">Groundskeeping</a> 
+                                   <a href="#">Hardware & Fasteners</a> 
+                                   <a href="#">Care & Accessibility Equipment</a> 
+                                   <a href="#">Hospitality</a> 
+                                   <a href="#">HVAC</a> 
+                                   <a href="#">Janitorial</a> 
+                                   <a href="#">Lighting & Electrical</a> 
+                                   <a href="#">Material Handling & Storage</a> 
+                                   <a href="#">Office Products & Furniture</a> 
+                                   <a href="#">Office/Commercial</a> 
+                                   <a href="#">Painting Supplies</a> 
+                                   <a href="#">Plumbing Supplies</a> 
+                                   <a href="#">Safety & Security Equipment</a> 
+                                   <a href="#">Tools & Equipment</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Outdoors</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Address Signs, Plaques, Letters & Numbers</a> 
+                                   <a href="#">Animal & Insect Controls</a> 
+                                   <a href="#">Bird & Wildlife Food & Accessories</a> 
+                                   <a href="#">Docks & Dock Accessories</a> 
+                                   <a href="#">Fire Pits & Outdoor Heating</a> 
+                                   <a href="#">Garden & Landscaping Tools</a> 
+                                   <a href="#">Gardening</a> 
+                                   <a href="#">Grills & Outdoor Cooking</a> 
+                                   <a href="#">Landscaping Materials</a> 
+                                   <a href="#">Outdoor Decor</a> 
+                                   <a href="#">Outdoor Lighting</a> 
+                                   <a href="#">Outdoor Power Equipment</a> 
+                                   <a href="#">Outdoor Recreation</a> 
+                                   <a href="#">Patio Furniture</a> 
+                                   <a href="#">Planters, Hanging Baskets & Accessories</a> 
+                                   <a href="#">Pools, Spas & Saunas</a> 
+                                   <a href="#">Rain & Sun Protection</a> 
+                                   <a href="#">Snow & Ice Removal</a> 
+                                   <a href="#">Swing Sets & Playsets</a> 
+                                   <a href="#">Watering & Irrigation</a> 
+                                   <a href="#">Yard Buildings, Outdoor Storage & Accessories</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Paint</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Adhesives & Tape</a> 
+                                   <a href="#">Brushes, Rollers & Trays</a> 
+                                   <a href="#">Caulks & Sealants</a> 
+                                   <a href="#">Ceilings</a> 
+                                   <a href="#">Cleaners, Thinners, & Removers</a> 
+                                   <a href="#">Concrete & Blacktop Sealers</a> 
+                                   <a href="#">Drop Cloths & Plastic Sheeting</a> 
+                                   <a href="#">Exterior Paint & Stain</a> 
+                                   <a href="#">Interior Paint & Stain</a> 
+                                   <a href="#">Ladders & Scaffolding</a> 
+                                   <a href="#">Paint Additives</a> 
+                                   <a href="#">Painting Tools</a> 
+                                   <a href="#">Paneling & Planking</a> 
+                                   <a href="#">Patching & Repair</a> 
+                                   <a href="#">Power Sprayers & Rollers</a> 
+                                   <a href="#">Sandpaper & Abrasives</a> 
+                                   <a href="#">Spray Paint</a> 
+                                   <a href="#">Wallpaper & Appliques</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Plumbing</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Bath</a> 
+                                   <a href="#">Commercial-Use Supplies</a> 
+                                   <a href="#">Drain Cleaning Equipment & Supplies</a> 
+                                   <a href="#">Faucets</a> 
+                                   <a href="#">Heating & Cooling</a> 
+                                   <a href="#">Kitchen</a> 
+                                   <a href="#">Plumbing Tools</a> 
+                                   <a href="#">Pumps & Well Tanks</a> 
+                                   <a href="#">Rough Plumbing</a> 
+                                   <a href="#">Sinks</a> 
+                                   <a href="#">Water Filtration & Softeners</a> 
+                                   <a href="#">Water Heaters</a> 
+                                   <a href="#">Water Systems</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Storage & Organization </span>
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Bathroom Storage & Organization</a> 
+                                   <a href="#">Closet Organizers</a> 
+                                   <a href="#">Decorative Hooks & Mounting Accessories</a> 
+                                   <a href="#">Garage & Outdoor Organizers</a> 
+                                   <a href="#">Kitchen Cabinets, Organizers & Food Storage</a> 
+                                   <a href="#">Laundry Organizers</a> 
+                                   <a href="#">Office Organization</a> 
+                                   <a href="#">Shelves & Shelving Units</a> 
+                                   <a href="#">Shoe Racks, Trees & Shelves</a> 
+                                   <a href="#">Storage Cubes & Drawers</a> 
+                                   <a href="#">Totes, Bins & Baskets</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li> 
+                        <li class="department"><span class="name">Tools & Hardware</span> 
+                           <div class="sub_menu w3-grey" style="display: none;"> 
+                               <nav class="w3-grey w3-sidenav"> 
+                                   <div class="w3-light-grey menu_frame "> 
+                                   <a href="#">Automotive & Marine Hardware</a> 
+                                   <a href="#">Cabinet Hardware & Accessories</a> 
+                                   <a href="#">Fasteners & Fastener Accessories</a> 
+                                   <a href="#">Hand Tools</a> 
+                                   <a href="#">Household Hardware</a> 
+                                   <a href="#">Material Handling</a> 
+                                   <a href="#">Outdoor Power Equipment</a> 
+                                   <a href="#">Power Tools & Accessories</a> 
+                                   <a href="#">Rental Equipment</a> 
+                                   <a href="#">Safety & Security Equipment</a> 
+                                   <a href="#">Shop All Tools</a> 
+                                   <a href="#">Tool Storage</a> 
+                                   </div> 
+                               </nav> 
+                           </div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w3-col m2 l3">
+                <img src="images/bwirender.png" width="1400px"/>
+            </div>      
+        </div>
+            <div class="w3-row">
+                <img src="images/flyer.png" width="200px"/>
+            </div>
+            <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32">
+          <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    
+    </body>
+</html>

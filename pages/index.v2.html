@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buy Wholesale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/pouchdb-6.4.3.min.js"></script>
+        <script src="../js/json2div.js"></script>
+        <script src="../js/populateList.js"></script>
+        <script src="../views/menu.v2.js"></script>
+        <script src="../controllers/menu.controller.v2.js"></script>
+        <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    	.disabled {
+    		text-decoration: line-through;
+    	}
+    	.delete {
+    	    text-decoration: red underline;
+    	}
+         i {cursor: pointer;}
+        </style>
+    </head>
+    <body>
+    
+        <!-- Navbar (sit on top) -->
+<div class="w3-bar w3-orange">
+	<span class="w3-left">
+  		<a href="#" class="w3-bar-item w3-button ">Rebate Center</a>
+  		<a href="#" class="w3-bar-item w3-button ">Order Tracker</a>
+        <a href="#" class="w3-bar-item w3-button "><i class="fa fa-newspaper-o"></i>Weekly Ad</a>        
+    </span>
+    <span class="w3-right">
+		<a href="#about" class="w3-bar-item w3-button"><i class="fa fa-gift"></i>Gift Registry</a>             <div class="w3-dropdown-hover w3-right w3-hide-small">
+          		<a href="#menu" class="w3-bar-item w3-button"><i class="fa fa-gear"></i>Welcome, Sign In <i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-white w3-card-4">
+                  <p><a href="#" class="w3-button">My Account</a></p>
+                  <p><a href="#" class="w3-button">View Orders</a></p>
+                  <p><a href="#" class="w3-button">Lookup Receipts</a></p>
+                  <p><a href="#" class="w3-button">My Profile</a></p>
+                  <p><button>Sign In</button></p>
+        		</div>                
+            </div>     
+    </span>
+</div>
+    
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+          
+        </header>
+
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px">
+            <br/><br/>
+        
+            <div class="w3-panel">
+                <div class="w3-layout-container">
+                    <div class="w3-layout-cell">
+                        <img class="w3-image" src="../images/buywholesalelogo.png" width="100" alt="Buy Wholesale">  
+                    </div>
+                    <div class="w3-layout-cell">
+                      <ul class="w3-navbar w3-wide w3-padding-8">
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Help Center <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Contact Us</a>
+                              <a href="#">BuyWholesale.com</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Services <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Blueprint Upload</a>
+                              <a href="#">Buy and Pick Up At Store</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>    
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <style>
+                li.department:hover{background-color : grey;}
+                li a:hover{background-color : grey;}
+                .sub_menu {
+                position : absolute;
+                top: 27px;
+                left: 258px;
+                display : none;
+                }
+                .menu_frame {        
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                height: 600px;
+                width: 100%;
+                }
+                .sub_menu nav {
+                padding: 10px; width:500px; position:relative !important;
+                }
+                nav {max-height:100%; width: 800px}
+            </style>
+            <div class="w3-row" >
+            <div class="w3-col m2 l3" style="position: relative">
+                <div class="w3-grey w3-large w3-text-white" style="text-align: center;">
+                    <span>Shop Departments</span>
+                </div>
+                <div class="w3-card-2" id="departmentmenu">
+                </div>
+            </div>
+            <div class="w3-col m2 l3">
+                <img src="../images/bwirender.png" width="1400px"/>
+            </div>      
+        </div>
+            <div class="w3-row">
+                <img src="../images/flyer.png" width="200px"/>
+            </div>
+            <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32">
+          <p>Powered by <a href="//www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    
+    </body>
+</html>

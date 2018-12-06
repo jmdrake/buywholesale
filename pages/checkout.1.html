@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buy Wholesale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/pouchdb-6.4.3.min.js"></script>
+        <script src="../js/json2div.js"></script>
+        <script src="../js/populateList.js"></script>
+        <script src="../controllers/menu.controller.js"></script>
+        <script src="../controllers/shoppingcart.controller.js"></script>
+        <script src="../controllers/inventory.controller.js"></script>
+        <script src="../views/menu.js"></script>
+        <script src="../views/navbar.js"></script>
+        <script src="../views/shoppingcartitems.js"></script>
+
+        <style>
+            body {font-family: "Times New Roman", Georgia, Serif;}
+            h1,h2,h3,h4,h5,h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+            }
+            .disabled {
+            	text-decoration: line-through;
+            }
+            .delete {
+                text-decoration: red underline;
+            }
+             i {cursor: pointer;}
+            
+            li.department:hover{background-color : grey;}
+            li a:hover{background-color : grey;}
+            .sub_menu {
+                position : absolute;
+                top: 27px;
+                left: 258px;
+                display : none;
+            }
+            .menu_frame {        
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                height: 600px;
+                width: 100%;
+            }
+            .sub_menu nav {
+                padding: 10px; width:500px; position:relative !important;
+            }
+            nav {max-height:100%; width: 800px}
+
+        </style>
+        <!-- link to the SqPaymentForm library -->
+        <script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+        </script>
+    
+        <!-- link to the local SqPaymentForm initialization -->
+        <script type="text/javascript" src="../js/sqpaymentform.js">
+        </script>
+    
+        <!-- link to the custom styles for SqPaymentForm -->
+        <link rel="stylesheet" type="text/css" href="../css/sqpaymentform.css">        
+    </head>
+    <body>
+    
+        <!-- Navbar (sit on top) -->
+        <div id="navbar" class="w3-bar w3-orange">
+        </div>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function(event) {
+            if (SqPaymentForm.isSupportedBrowser()) {
+              paymentForm.build();
+              paymentForm.recalculateSize();
+            }
+          });            
+        </script>
+        
+
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px">
+            <div class="w3-panel">
+                <div class="w3-layout-container">
+                    <div class="w3-layout-cell">
+                        <a href="index.html">
+                            <img class="w3-image" src="../images/buywholesalelogo.png" width="100" alt="Buy Wholesale">  
+                        </a>
+                    </div>
+                    <div class="w3-layout-cell w3-border" id="checkoutcart">
+                          <!--Your payment page declaration-->
+                         <div id="orderSummary">
+                         ...
+                          <button id='show-paymentform' onclick='buildForm()'>Pay with card</button>
+                        
+                            <!--Square template form-container div-->
+                            <div id="form-container">
+                            ...   
+                            </div>
+                            <!--end Square template form-container div-->
+                         ...   
+                         </div>
+                         <script type="text/javascript">
+                          function buildForm() {
+                            if (SqPaymentForm.isSupportedBrowser()) {
+                              var paymentDiv = document.getElementById("form-container");
+                              if (paymentDiv.style.display === "none") {
+                                  paymentDiv.style.display = "block";
+                              } 
+                              paymentForm.build();
+                              paymentForm.recalculateSize();
+                            } else {
+                              // Show a "Browser is not supported" message to your buyer
+                            }
+                          }
+                         </script>
+                         <!--end Your payment page declaration-->       
+                    </div>
+                    <div class="w3-layout-cell w3-border" id="payments">
+                        <div id="form-container">
+                          <div id="sq-ccbox">
+                            <!--
+                              Be sure to replace the action attribute of the form with the path of
+                              the Transaction API charge endpoint URL you want to POST the nonce to
+                              (for example, "/process-card")
+                            -->
+                            <form id="nonce-form" novalidate action="PATH/TO/PAYMENT/PROCESSING/PAGE" method="post">
+                              <fieldset>
+                                <span class="label">Card Number</span>
+                                <div id="sq-card-number"></div>
+                        
+                                <div class="third">
+                                  <span class="label">Expiration</span>
+                                  <div id="sq-expiration-date"></div>
+                                </div>
+                        
+                                <div class="third">
+                                  <span class="label">CVV</span>
+                                  <div id="sq-cvv"></div>
+                                </div>
+                        
+                                <div class="third">
+                                  <span class="label">Postal</span>
+                                  <div id="sq-postal-code"></div>
+                                </div>
+                              </fieldset>
+                        
+                              <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $1.00</button>
+                        
+                              <div id="error"></div>
+                        
+                              <!--
+                                After a nonce is generated it will be assigned to this hidden input field.
+                              -->
+                              <input type="hidden" id="card-nonce" name="nonce">
+                            </form>
+                          </div> <!-- end #sq-ccbox -->
+                        
+                        </div> <!-- end #form-container -->                        
+                    </div>                    
+                </div>
+            </div>
+
+            <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32">
+          <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    
+    </body>
+</html>

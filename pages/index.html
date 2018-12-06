@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buy Wholesale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/pouchdb-6.4.3.min.js"></script>
+        <script src="../js/json2div.js"></script>
+        <script src="../js/populateList.js"></script>
+        <script src="../controllers/menu.controller.js"></script>
+        <script src="../controllers/shoppingcart.controller.js"></script>
+        <script src="../controllers/inventory.controller.js"></script>
+        <script src="../views/menu.js"></script>
+        <script src="../views/navbar.js"></script>
+        <script src="../views/localitems.js"></script>
+        <script src="../views/sampleitems.js"></script>
+        <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    	.disabled {
+    		text-decoration: line-through;
+    	}
+    	.delete {
+    	    text-decoration: red underline;
+    	}
+         i {cursor: pointer;}
+        </style>
+    </head>
+    <body>
+    
+        <!-- Navbar (sit on top) -->
+        <div id="navbar" class="w3-bar w3-orange">
+        </div>
+    
+
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px">
+            <br/><br/>
+        
+            <div class="w3-panel">
+                <div class="w3-layout-container">
+                    <div class="w3-layout-cell">
+                        <a href="index.html">
+                            <img class="w3-image" src="../images/buywholesalelogo.png" width="200px" alt="Buy Wholesale">  
+                        </a>
+                        <span class="w3-xxlarge">Why Pay Retail When You Can...Buy Wholesale!</span>
+                    </div>
+                    <div class="w3-layout-cell">
+                      <ul class="w3-navbar w3-wide w3-padding-8">
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Help Center <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Contact Us</a>
+                              <a href="#">BuyWholesale.com</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>
+                        <li class="w3-dropdown-hover w3-right w3-hide-small">
+                      		<a href="#menu" class="w3-left w3-white">Services <i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-white w3-card-4">
+                              <a href="#">Blueprint Upload</a>
+                              <a href="#">Buy and Pick Up At Store</a>
+                    		      <a href="#">Buy Wholesale Stores</a>
+                              <a href="#">Orders & Shipping</a>
+                              <a href="#">Returns & Exchanges</a>          
+                    		</div>
+                        </li>    
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <style>
+                li.department:hover{background-color : grey;}
+                li a:hover{background-color : grey;}
+                .sub_menu {
+                position : absolute;
+                top: 27px;
+                left: 258px;
+                display : none;
+                }
+                .menu_frame {        
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                height: 600px;
+                width: 100%;
+                }
+                .sub_menu nav {
+                padding: 10px; width:500px; position:relative !important;
+                }
+                nav {max-height:100%; width: 800px}
+            </style>
+            <div class="w3-row" >
+            <div class="w3-col m2 l3" style="position: relative">
+                <div class="w3-grey w3-large w3-text-white" style="text-align: center;">
+                    <span>Shop Departments</span>
+                </div>
+                <div class="w3-card-2" id="departmentmenu">
+                </div>
+            </div>
+            <div class="w3-col m8 8">
+                <div class="w3-row"><img src="../images/bwirender.png" width="100%"></img></div>
+                <div class="w3-row w3-card-2">
+                    <div class="w3-threequarter">
+                        <div class="w3-display-container">
+                            <img src="../images/hardieboardinstallation.jpg" width="100%">
+                            <div class="w3-padding w3-display-topright w3-text-white w3-xlarge">Cement Fiber Board At Wholesale Prices</div>
+                            <div class="w3-padding w3-display-middle w3-text-white w3-xxlarge">Starting At $3.99 Each!</div>
+                            <div class="w3-padding w3-display-bottomleft w3-text-white w3-large">Variety of James Hardie, Boral, Certainteed, and LP Siding, Trim and Shake</div>                            
+                        </div>
+                    </div>
+                    <div class="w3-quarter">
+                        <div class="w3-panel">
+                            <img src="../images/hardieboard.jpg" alt="Hardie Board" style="width:100%">
+                            <div class="w3-container">
+                                <p><b>Lap Siding</b></p>
+                                <table>
+                                    <tr><td>5 1/4 inch:</td><td>$3.99</td></tr>
+                                    <tr><td>6 1/4 inch:</td><td>$4.99</td></tr>
+                                    <tr><td>7 1/4 inch:</td><td>$5.49</td></tr>
+                                    <tr><td>8 1/4 inch:</td><td>$5.99</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- <div class="w3-row" style='background-image:url("../images/bwirender.png")'>
+                    <div class="w3-col m8 l8">
+                        <h2>Great Deals On Hardie Board</h2>
+                        <img src="../images/hardieboardinstallation.jpg" width="100%">
+                        <br><br><br><br>
+                    </div>
+                    <div class="w3-col m8 l8">
+                        
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <h1 class="w3-blue">In Store Deals!</h1>
+                    <div id="localitems" class="w3-col m10 l9 w3-panel">
+                    </div>
+                </div>-->
+            <div class="w3-row" id="sampleitems">
+                <p>Check out these deals!</p>
+            </div>
+        </div>
+            <div class="w3-row">
+                <img src="../images/flyer.png" width="200px"/>
+            </div>
+            <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32">
+          <p>Powered by <a href="//www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    
+    </body>
+</html>
